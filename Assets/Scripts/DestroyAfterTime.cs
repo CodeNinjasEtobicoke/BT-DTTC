@@ -5,8 +5,11 @@ using UnityEngine;
 public class DestroyAfterTime : MonoBehaviour
 {
     // Start is called before the first frame update
+    [Header("Timer")]
+    public float timeToDestruction;
     void Start()
     {
+        Invoke("DestroyObject", timeToDestruction);
 
     }
 
@@ -14,6 +17,10 @@ public class DestroyAfterTime : MonoBehaviour
     void Update()
     {
 
+    }
+    void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }
 
